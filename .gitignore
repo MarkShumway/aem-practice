@@ -15,6 +15,7 @@ crx-quickstart/
 # Frontend
 node/
 node_modules/
+ui.frontend/dist
 ui.frontend.general/dist/
 ui.frontend.react/dist/
 ui.frontend.angular/dist/
