@@ -225,9 +225,9 @@
                               
           <configuration>
                                     
-            <nodeVersion>v16.17.0</nodeVersion>
+            <nodeVersion>v20.18.0</nodeVersion>
                                     
-            <npmVersion>8.15.0</npmVersion>
+            <npmVersion>10.8.2</npmVersion>
                                 
           </configuration>
                               
@@ -1237,7 +1237,9 @@ Bundle-DocURL:
                         
         <artifactId>uber-jar</artifactId>
                         
-        <version>6.5</version>
+        <version>6.5.5</version>
+        
+        <classifier>apis</classifier>
                         
         <scope>provided</scope>
                     
