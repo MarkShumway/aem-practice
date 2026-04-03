@@ -1,0 +1,16 @@
+.cmp-text {
+    &.highlight--yellow {
+        background-color: #fff9c4;
+        padding: 0.5rem;
+    }
+
+    &.highlight--blue {
+        background-color: #e3f2fd;
+        padding: 0.5rem;
+    }
+
+    &.highlight--green {
+        background-color: #e8f5e9;
+        padding: 0.5rem;
+    }
+}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/conf/myaem" mode="merge"/>
+    <filter root="/conf/myaem" mode="update"/>
     <filter root="/content/myaem" mode="merge"/>
     <filter root="/content/dam/myaem/asset.jpg" mode="merge"/>
     <filter root="/content/experience-fragments/myaem" mode="merge"/>
