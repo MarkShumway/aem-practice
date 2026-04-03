@@ -1,0 +1,6 @@
+<!--/* Text Component with Highlight Color */-->
+<sly data-sly-use.model="com.myaem.core.models.TextHighlightModel"/>
+
+<div class="cmp-text ${model.highlightColor @ context='attribute'}">
+    <sly data-sly-include="/apps/core/wcm/components/text/v2/text/text.html"/>
+</div>
