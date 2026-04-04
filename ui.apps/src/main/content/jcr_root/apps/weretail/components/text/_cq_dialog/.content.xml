@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Text"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <text
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Text"
+                            sling:resourceType="granite/ui/components/coral/foundation/include"
+                            path="/mnt/overlay/libs/core/wcm/components/text/v2/text/cq:dialog/content/items/tabs/items/text"/>
+                    <styling
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Styling"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <highlightColor
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Highlight Color"
+                                    name="./highlightColor">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <none
+                                            jcr:primaryType="nt:unstructured"
+                                            text="None"
+                                            value=""/>
+                                    <yellow
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Yellow"
+                                            value="highlight--yellow"/>
+                                    <blue
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Blue"
+                                            value="highlight--blue"/>
+                                    <green
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Green"
+                                            value="highlight--green"/>
+                                </items>
+                            </highlightColor>
+                        </items>
+                    </styling>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

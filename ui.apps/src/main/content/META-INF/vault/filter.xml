@@ -3,4 +3,5 @@
     <filter root="/apps/myaem/clientlibs"/>
     <filter root="/apps/myaem/components"/>
     <filter root="/apps/myaem/i18n"/>
+    <filter root="/apps/weretail/clientlibs/clientlib-weretail"/>
 </workspaceFilter>

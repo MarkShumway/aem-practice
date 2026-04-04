@@ -30,6 +30,19 @@ const CLIENTLIB_DIR = path.join(
   'clientlibs'
 );
 
+const WERETAIL_CLIENTLIB_DIR = path.join(
+    __dirname,
+    '..',
+    'ui.apps',
+    'src',
+    'main',
+    'content',
+    'jcr_root',
+    'apps',
+    'weretail',
+    'clientlibs'
+);
+
 const libsBaseConfig = {
   allowProxy: true,
   serializationFormat: 'xml',
@@ -86,6 +99,19 @@ module.exports = {
           files: ['**/*.*'],
           flatten: false,
           ignore: ['**/*.js', '**/*.css']
+        }
+      }
+    },
+    {
+      ...libsBaseConfig,
+      clientLibRoot: WERETAIL_CLIENTLIB_DIR,
+      name: 'clientlib-weretail',
+      categories: ['we-retail.base'],
+      assets: {
+        css: {
+          cwd: 'clientlib-site',
+          files: ['**/*.css'],
+          flatten: false
         }
       }
     }
