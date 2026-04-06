@@ -1,0 +1,43 @@
+.cmp-weather {
+    background: linear-gradient(135deg, #1a6b8a, #2d9cdb);
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    max-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    &__city {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    &__temp {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    &__description {
+        font-size: 1rem;
+        text-transform: capitalize;
+        opacity: 0.9;
+    }
+
+    &__icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    &__loading {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    &__error {
+        font-size: 0.9rem;
+        color: #ffcccc;
+    }
+}

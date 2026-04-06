@@ -1,0 +1,15 @@
+<!--/* Weather Widget Component */-->
+<div class="cmp-weather"
+     data-city="${properties.city @ context='attribute'}"
+     data-api-key="70df6baaa529b586035c6ab8ac810390">
+    <div class="cmp-weather__loading">Loading weather...</div>
+    <div class="cmp-weather__content" style="display:none;">
+        <div class="cmp-weather__city"></div>
+        <div class="cmp-weather__temp"></div>
+        <div class="cmp-weather__description"></div>
+        <img class="cmp-weather__icon" src="" alt=""/>
+    </div>
+    <div class="cmp-weather__error" style="display:none;">
+        Unable to load weather data.
+    </div>
+</div>
