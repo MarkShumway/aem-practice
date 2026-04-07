@@ -1,15 +1,26 @@
 <!--/* Weather Widget Component */-->
-<div class="cmp-weather"
-     data-city="${properties.city @ context='attribute'}"
-     data-api-key="70df6baaa529b586035c6ab8ac810390">
-    <div class="cmp-weather__loading">Loading weather...</div>
-    <div class="cmp-weather__content" style="display:none;">
+<sly data-sly-use.model="com.myaem.core.models.WeatherModel" />
+<div class="cmp-weather" data-api-key="${model.apiKey @ context='attribute'}">
+    <div class="cmp-weather__search">
+        <label>
+            <input
+                name="city-search"
+                type="text"
+                class="cmp-weather__input"
+                placeholder="Search for a city..."
+                autocomplete="off"/>
+        </label>
+        <ul class="cmp-weather__suggestions"></ul>
+    </div>
+
+    <div class="cmp-weather__result" hidden>
         <div class="cmp-weather__city"></div>
         <div class="cmp-weather__temp"></div>
         <div class="cmp-weather__description"></div>
         <img class="cmp-weather__icon" src="" alt=""/>
     </div>
-    <div class="cmp-weather__error" style="display:none;">
+
+    <div class="cmp-weather__error" hidden>
         Unable to load weather data.
     </div>
 </div>

@@ -20,6 +20,9 @@ ui.frontend.general/dist/
 ui.frontend.react/dist/
 ui.frontend.angular/dist/
 
+# OSGi configs with secrets
+ui.config/src/main/content/jcr_root/apps/myaem/osgiconfig/config/com.myaem.core.services.WeatherServiceImpl.cfg.json
+
 # IDE
 .idea/
 .vscode/
