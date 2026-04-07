@@ -1,0 +1,90 @@
+.cmp-weather {
+    background: linear-gradient(135deg, $color-teal-blue, $color-sky-blue);
+    border-radius: 8px;
+    color: $color-white;
+    padding: 1.5rem;
+    max-width: 350px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+
+    &__search {
+        position: relative;
+        margin-bottom: 1rem;
+        display: flex;
+    }
+
+    label {
+        flex: auto;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 0.6rem 1rem;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        box-sizing: border-box;
+        outline: none;
+        color: $color-black;
+
+        &:focus {
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
+        }
+    }
+
+    &__suggestions {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background: $color-white;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        width: 100%;
+        z-index: 100;
+    }
+
+    &__suggestion-item {
+        padding: 0.6rem 1rem;
+        color: $color-dark-charcoal;
+        cursor: pointer;
+        font-size: 0.9rem;
+
+        &:hover {
+            background-color: $color-ice-blue;
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $color-light-gray;
+        }
+    }
+
+    &__city {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    &__temp {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    &__description {
+        font-size: 1rem;
+        text-transform: capitalize;
+        opacity: 0.9;
+    }
+
+    &__icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    &__error {
+        font-size: 0.9rem;
+        color: $color-pale-pink;
+    }
+}

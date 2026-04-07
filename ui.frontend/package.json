@@ -16,18 +16,22 @@
     "sync": "aemsync -d -p ../ui.apps/src/main/content",
     "chokidar": "chokidar -c \"clientlib\" ./dist",
     "aemsyncro": "aemsync -w ../ui.apps/src/main/content",
+    "test": "jest",
     "watch": "npm-run-all --parallel start chokidar aemsyncro"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.3.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/preset-env": "^7.29.2",
+    "@babel/preset-typescript": "^7.28.5",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "acorn": "^6.1.0",
     "aem-clientlib-generator": "^1.8.0",
     "aemsync": "^4.0.1",
     "autoprefixer": "^9.2.1",
+    "babel-jest": "^30.3.0",
     "browserslist": "^4.2.1",
     "chokidar-cli": "^3.0.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -39,6 +43,8 @@
     "eslint-webpack-plugin": "^3.1.1",
     "glob-import-loader": "^1.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
     "mini-css-extract-plugin": "^2.4.5",
     "postcss": "^8.2.15",
     "postcss-loader": "^3.0.0",
@@ -55,7 +61,15 @@
     "webpack-dev-server": "^4.6.0",
     "webpack-merge": "^5.8.0"
   },
-  "dependencies": {},
+  "jest": {
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.js"
+    ]
+  },
   "browserslist": [
     "last 2 version",
     "> 1%"

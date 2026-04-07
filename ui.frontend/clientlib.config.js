@@ -112,6 +112,11 @@ module.exports = {
           cwd: 'clientlib-site',
           files: ['**/*.css'],
           flatten: false
+        },
+        js: {
+          cwd: 'clientlib-site',
+          files: ['**/*.js'],
+          flatten: false
         }
       }
     }
