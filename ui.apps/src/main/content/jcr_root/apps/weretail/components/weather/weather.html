@@ -1,10 +1,13 @@
 <!--/* Weather Widget Component */-->
-<sly data-sly-use.model="com.myaem.core.models.WeatherModel" />
-<div class="cmp-weather" data-api-key="${model.apiKey @ context='attribute'}">
+<sly data-sly-use.model="com.myaem.core.models.WeatherModel"/>
+<div class="cmp-weather"
+     data-api-key="${model.apiKey @ context='attribute'}"
+     data-unit="${model.temperatureUnit @ context='attribute'}"
+     data-symbol="${model.temperatureSymbol @ context='attribute'}">
+    <h3 class="cmp-weather__title">${model.widgetTitle @ context='text'}</h3>
     <div class="cmp-weather__search">
         <label>
             <input
-                name="city-search"
                 type="text"
                 class="cmp-weather__input"
                 placeholder="Search for a city..."

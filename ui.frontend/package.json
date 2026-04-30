@@ -67,7 +67,8 @@
       "^.+\\.js$": "babel-jest"
     },
     "testMatch": [
-      "**/__tests__/**/*.js"
+      "**/src/test/javascript/**/*.test.js",
+      "**/src/test/javascript/**/__tests__/**/*.js"
     ]
   },
   "browserslist": [
