@@ -17,6 +17,14 @@
         flex: auto;
     }
 
+    &__title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0 0 1rem 0;
+        color: #ffffff;
+        opacity: 0.9;
+    }
+
     &__input {
         width: 100%;
         padding: 0.6rem 1rem;

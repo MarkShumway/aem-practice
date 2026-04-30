@@ -6,9 +6,10 @@
 global.fetch = jest.fn();
 
 // Helper to set up the DOM
-function setupWeatherWidget(city = '', apiKey = 'test-api-key') {
+function setupWeatherWidget(apiKey = 'test-api-key', unit = 'imperial', symbol = '°F', title = 'Weather') {
     document.body.innerHTML = `
-        <div class="cmp-weather" data-api-key="${apiKey}">
+        <div class="cmp-weather" data-api-key="${apiKey}" data-unit="${unit}" data-symbol="${symbol}">
+            <h3 class="cmp-weather__title">${title}</h3>
             <div class="cmp-weather__search">
                 <input type="text" class="cmp-weather__input" placeholder="Search for a city..." autocomplete="off"/>
                 <ul class="cmp-weather__suggestions"></ul>
@@ -82,6 +83,60 @@ describe('Weather Widget', () => {
         });
     });
 
+    describe('Authored Configuration', () => {
+        test('renders the widget title', () => {
+            setupWeatherWidget('test-api-key', 'imperial', '°F', 'My Weather Widget');
+            const title = document.querySelector('.cmp-weather__title');
+            expect(title).not.toBeNull();
+            expect(title.textContent).toBe('My Weather Widget');
+        });
+
+        test('renders default title when none provided', () => {
+            setupWeatherWidget();
+            const title = document.querySelector('.cmp-weather__title');
+            expect(title).not.toBeNull();
+            expect(title.textContent).toBe('Weather');
+        });
+
+        test('data-unit attribute is imperial by default', () => {
+            setupWeatherWidget();
+            const widget = document.querySelector('.cmp-weather');
+            expect(widget.getAttribute('data-unit')).toBe('imperial');
+        });
+
+        test('data-unit attribute is metric when Celsius selected', () => {
+            setupWeatherWidget('test-api-key', 'metric', '°C', 'Weather');
+            const widget = document.querySelector('.cmp-weather');
+            expect(widget.getAttribute('data-unit')).toBe('metric');
+        });
+
+        test('data-symbol attribute is °F by default', () => {
+            setupWeatherWidget();
+            const widget = document.querySelector('.cmp-weather');
+            expect(widget.getAttribute('data-symbol')).toBe('°F');
+        });
+
+        test('data-symbol attribute is °C when Celsius selected', () => {
+            setupWeatherWidget('test-api-key', 'metric', '°C', 'Weather');
+            const widget = document.querySelector('.cmp-weather');
+            expect(widget.getAttribute('data-symbol')).toBe('°C');
+        });
+
+        test('displays temperature with Fahrenheit symbol', () => {
+            setupWeatherWidget('test-api-key', 'imperial', '°F', 'Weather');
+            const temp = document.querySelector('.cmp-weather__temp');
+            temp.textContent = Math.round(72.5) + '°F';
+            expect(temp.textContent).toBe('73°F');
+        });
+
+        test('displays temperature with Celsius symbol', () => {
+            setupWeatherWidget('test-api-key', 'metric', '°C', 'Weather');
+            const temp = document.querySelector('.cmp-weather__temp');
+            temp.textContent = Math.round(22.5) + '°C';
+            expect(temp.textContent).toBe('23°C');
+        });
+    });
+    
     describe('City Search Input', () => {
         test('does not fetch suggestions when input is less than 2 characters', () => {
             const input = document.querySelector('.cmp-weather__input');

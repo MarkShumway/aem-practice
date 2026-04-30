@@ -10,13 +10,46 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-            <city
+            <tabs
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                    fieldLabel="City"
-                    fieldDescription="Enter the city name to display weather for"
-                    name="./city"
-                    required="{Boolean}true"/>
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Properties"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <widgetTitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Widget Title"
+                                    fieldDescription="Heading displayed above the search input"
+                                    name="./widgetTitle"
+                                    value="Weather"/>
+                            <temperatureUnit
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Temperature Unit"
+                                    fieldDescription="Choose Fahrenheit or Celsius"
+                                    name="./temperatureUnit">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <fahrenheit
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Fahrenheit (°F)"
+                                            value="imperial"
+                                            selected="{Boolean}true"/>
+                                    <celsius
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Celsius (°C)"
+                                            value="metric"/>
+                                </items>
+                            </temperatureUnit>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
         </items>
     </content>
 </jcr:root>
